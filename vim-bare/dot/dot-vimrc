@@ -1,0 +1,27 @@
+set nocompatible
+
+set directory=~/.dot/vim-bare/swap//
+set nobackup
+set nowritebackup
+
+set shiftwidth=4
+set tabstop=4
+set et
+setlocal cindent
+set number
+
+set hidden
+set noreadonly
+set lazyredraw
+set showmode
+set path+=**
+set wildmode=longest:full
+set wildmenu
+set ruler
+syntax on
+syntax enable
+
+"================================== Optional ===================================
+"set cursorline
+"set iskeyword-=_
+
