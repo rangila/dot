@@ -6,6 +6,5 @@ From repository root (e.g.: `~/.dot`)
 stow --dotfiles dot -d vim-bare
 ```
 
-## Dependencies
-
-    - stow
+**Dependencies**
+- stow
