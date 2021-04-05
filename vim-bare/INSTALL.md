@@ -7,4 +7,5 @@ stow --dotfiles dot -d vim-bare
 ```
 
 **Dependencies**
+- vim
 - stow
