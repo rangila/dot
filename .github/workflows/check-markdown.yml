@@ -3,9 +3,9 @@ name: Markdown
 on: push
 
 jobs:
-	check-markdown:
-		name: Check markdown to be nice
-		runs-on: ubuntu-latest
+        check-markdown:
+                name: Check markdown to be nice
+                runs-on: ubuntu-latest
         steps:
             - name: markdownlint-cli
             uses: nosborn/github-action-markdown-cli@v1.1.1
