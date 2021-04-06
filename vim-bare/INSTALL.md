@@ -3,7 +3,7 @@
 From repository root (e.g.: `~/.dot`)
 
 ```bash
-stow --dotfiles dot -d vim-bare
+stow --dotfiles dot -t $HOME -d vim-bare
 ```
 
 ## Dependencies
