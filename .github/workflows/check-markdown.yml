@@ -9,7 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Markdown Linter
-        uses: nosborn/github-action-markdown-cli@v1.1.1
-        with:
-          files: .
+        uses: bewuethr/mdl-action@v1.1.2
 
