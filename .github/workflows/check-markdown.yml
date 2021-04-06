@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Markdown Linter
-        uses: bewuethr/mdl-action@v1.1.2
+        uses: bewuethr/mdl-action@v1
 
