@@ -11,4 +11,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Markdown Linter
         uses: bewuethr/mdl-action@v1
+        with:
+          style-file: .github/workflows/md-style.rb
 
