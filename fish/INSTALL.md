@@ -1,3 +1,4 @@
+<!-- vim: set colorcolumn=80: -->
 # Install
 
 From repository root (e.g.: `~/.dot`)

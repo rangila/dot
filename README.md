@@ -1,3 +1,4 @@
+<!-- vim: set colorcolumn=80: -->
 # Dotfiles and configurations
 
 With this repo I want to track the configurations for the tools I find essential to have on every system.

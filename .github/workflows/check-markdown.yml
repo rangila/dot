@@ -8,6 +8,7 @@ jobs:
     name: Check markdown to be nice
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Markdown Linter
         uses: bewuethr/mdl-action@v1
 

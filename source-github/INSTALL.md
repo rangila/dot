@@ -1,3 +1,4 @@
+<!-- vim: set colorcolumn=80: -->
 # Description
 
 **fzf**: fuzzy search tool
