@@ -4,14 +4,25 @@
 
 Fish shell configuration and plugins.
 
+## Install
+
+From repository root (e.g.: `~/.dot`)
+
+```bash
+mkdir -p $HOME/.config/fish && stow --dotfiles dot -t $HOME/.config/fish -d fish/
+fish
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+git checkout -- fish/dot/fish_plugins && fisher update
+fish_add_path .cargo/bin
+```
+
 ## Appreciation list
 
 Follows a list of worthwhile features that caught my eye:
 
 - configuration is minimal, since out-of-the-box defaults are already good
-- `$PATH` by default includes modern tools support.
-  e.g.: `$HOME/.cargo/bin`
 - command suggestion is directory sensitive
+- universal (persistent) variables
 
 ## Plugins
 
@@ -49,17 +60,6 @@ Nice and lightweight command prompt.
 ### fisher
 
 Plugin manager for fish.
-
-## Install
-
-From repository root (e.g.: `~/.dot`)
-
-```bash
-mkdir -p $HOME/.config/fish && stow --dotfiles dot -t $HOME/.config/fish -d fish/
-fish
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-git checkout -- fish/dot/fish_plugins && fisher update
-```
 
 ## Dependencies
 
