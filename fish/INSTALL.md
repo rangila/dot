@@ -1,5 +1,9 @@
 <!-- vim: set colorcolumn=80: -->
-# Install
+# Description
+
+Fish shell configuration.
+
+## Install
 
 From repository root (e.g.: `~/.dot`)
 

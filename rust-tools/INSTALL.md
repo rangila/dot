@@ -1,5 +1,9 @@
 <!-- vim: set colorcolumn=80: -->
-# Install
+# Description
+
+Collection of useful _rewritten-in-rust_ replacements.
+
+## Install
 
 Separate crates
 ```bash

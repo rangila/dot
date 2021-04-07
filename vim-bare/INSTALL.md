@@ -1,5 +1,9 @@
 <!-- vim: set colorcolumn=80: -->
-# Install
+# Description
+
+Basic vim configuration without any plugins for quick and dirty use.
+
+## Install
 
 From repository root (e.g.: `~/.dot`)
 
