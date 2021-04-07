@@ -13,7 +13,10 @@ git checkout -- fish/dot/fish_plugins && fisher update
 
 **Common**
 - stow
+- curl
 
 **Uncommon**
 - fish >= 3.2 (repo)
-- fisher (one-liner, see above)
+
+**Dotfiles**
+- [rust-tools](rust-tools/INSTALL.md)
