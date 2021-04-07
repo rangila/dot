@@ -24,6 +24,6 @@ cargo install git-delta fd-find tokei bat ripgrep
 
 ## Dependencies
 
-**Common**
+### Common
 
 - cargo

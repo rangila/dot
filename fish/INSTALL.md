@@ -17,16 +17,16 @@ git checkout -- fish/dot/fish_plugins && fisher update
 
 ## Dependencies
 
-**Common**
+### Common
 
 - stow
 - curl
 
-**Uncommon**
+### Uncommon
 
 - fish >= 3.2 (repo)
 
-**Dotfiles**
+### Dotfiles
 
 - [rust-tools](rust-tools/INSTALL.md)
 

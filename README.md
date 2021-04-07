@@ -8,7 +8,7 @@ essential to have on every system.
 Eventually the aim is to solve some intrinsic issues as well:
 
 - **Replication**: how to effortlessly replicate the configurations on
-a new system?
+                   a new system?
 - **Consistency**: how to make sure changes are consistent and repeatable?
 - **Dependency management**: how to avoid implicit dependencies?
 

@@ -14,7 +14,7 @@ stow --dotfiles dot -t $HOME -d vim-bare
 
 ## Dependencies
 
-**Common**
+### Common
 
 - vim
 - stow
