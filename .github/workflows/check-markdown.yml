@@ -1,7 +1,7 @@
 # vim: set ts=2 sw=2 et smartindent :
 name: Markdown
 
-on: [push, pull_request]
+on: pull_request
 
 jobs:
   check-markdown:
