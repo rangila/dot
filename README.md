@@ -12,10 +12,12 @@ Eventually the aim is to solve some intrinsic issues as well:
 - **Consistency**: how to make sure changes are consistent and repeatable?
 - **Dependency management**: how to avoid implicit dependencies?
 
-Let me introduce what are these tools and how I find convenient to use them.
-
 ## Tools
 
-## Installation
+**[vim](vim-bare/INSTALL.md)**: must have editor
+**[rust-tools](rust-tools/INSTALL.md)**: rust community has rewritten a set
+    of linux standard tools... with a modern twist
+**[fish](fish/INSTALL.md)**: a modern shell with nice defaults
+**[github-tools](github-tools/INSTALL.md)**: some tools are better to be
+    installed from github repository (or it's the only way)
 
-## Workflow
