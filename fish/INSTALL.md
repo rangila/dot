@@ -23,7 +23,7 @@ Fuzzy matching:
 
 <!-- markdownlint-disable MD033 -->
 
-- **file:** <kbd>Ctrl</kbd>+<kbd>F</kbd>
+- **file:** <span><kbd>Ctrl</kbd>+<kbd>F</kbd></span>
 - **git status:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd>
 - **git commit hash:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd>
 - **history:** <kbd>Ctrl</kbd>+<kbd>R</kbd>
