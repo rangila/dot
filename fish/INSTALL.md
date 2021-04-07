@@ -21,25 +21,26 @@ Plugin list with basic usage.
 
 Fuzzy matching:
 
-<!-- markdownlint-disable-next-line MD033 -->
+<!-- markdownlint-disable MD033 -->
+
 - **file:** <kbd>Ctrl</kbd>+<kbd>F</kbd>
-<!-- markdownlint-disable-next-line MD033 -->
 - **git status:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd>
-<!-- markdownlint-disable-next-line MD033 -->
 - **git commit hash:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd>
-<!-- markdownlint-disable-next-line MD033 -->
 - **history:** <kbd>Ctrl</kbd>+<kbd>R</kbd>
-<!-- markdownlint-disable-next-line MD033 -->
 - **shell variable:** <kbd>Ctrl</kbd>+<kbd>V</kbd>
+
+<!-- markdownlint-enable MD033 -->
 
 ### z
 
 Smart directory jumping:
 
-<!-- markdownlint-disable-next-line MD033 -->
+<!-- markdownlint-disable MD033 -->
+
 - **jump:** <kbd>z</kbd>+`keyword`
-<!-- markdownlint-disable-next-line MD033 -->
 - **jump with alternatives:** <kbd>z</kbd>+`keyword`+<kbd>Tab</kbd>
+
+<!-- markdownlint-enable MD033 -->
 
 ### bass
 
