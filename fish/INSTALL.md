@@ -10,7 +10,7 @@ Follows a list of worthwhile features that caught my eye:
 
 - configuration is minimal, since out-of-the-box defaults are already good
 - `$PATH` by default includes modern tools support.
-  e.g.: `$HOME/.cargo/bin` 
+  e.g.: `$HOME/.cargo/bin`
 - command suggestion is directory sensitive
 
 ## Plugins
@@ -21,17 +21,24 @@ Plugin list with basic usage.
 
 Fuzzy matching:
 
-- **file:** <kbd>Ctrl</kbd>+<kbd>F</kbd> (`F` for file)
-- **git status:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd> (`S` for status, `Alt` to prevent overriding `pager-toggle-search`)
-- **git commit hash:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd> (`L` for log, `Alt` to prevent overriding clear screen)
-- **history:** <kbd>Ctrl</kbd>+<kbd>R</kbd> (`R` for reverse-i-search)
-- **shell variable:** <kbd>Ctrl</kbd>+<kbd>V</kbd> (`V` for variable)
+<!-- markdownlint-disable-next-line MD033 -->
+- **file:** <kbd>Ctrl</kbd>+<kbd>F</kbd>
+<!-- markdownlint-disable-next-line MD033 -->
+- **git status:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd>
+<!-- markdownlint-disable-next-line MD033 -->
+- **git commit hash:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd>
+<!-- markdownlint-disable-next-line MD033 -->
+- **history:** <kbd>Ctrl</kbd>+<kbd>R</kbd>
+<!-- markdownlint-disable-next-line MD033 -->
+- **shell variable:** <kbd>Ctrl</kbd>+<kbd>V</kbd>
 
 ### z
 
 Smart directory jumping:
 
+<!-- markdownlint-disable-next-line MD033 -->
 - **jump:** <kbd>z</kbd>+`keyword`
+<!-- markdownlint-disable-next-line MD033 -->
 - **jump with alternatives:** <kbd>z</kbd>+`keyword`+<kbd>Tab</kbd>
 
 ### bass
