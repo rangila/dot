@@ -6,6 +6,8 @@ Basic vim configuration without any plugins for quick and dirty use.
 
 ## Install
 
+First, install the [dependencies](#dependencies).
+
 From repository root (e.g.: `~/.dot`)
 
 ```bash

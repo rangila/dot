@@ -9,6 +9,8 @@ instructions.
 
 ## Install
 
+First, install the [dependencies](#dependencies).
+
 ```bash
 ./fzf/install
 ```
