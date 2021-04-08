@@ -6,6 +6,8 @@ Collection of useful _rewritten-in-rust_ replacements.
 
 ## Install
 
+First, install the [dependencies](#dependencies)
+
 Separate crates
 
 ```bash

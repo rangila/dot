@@ -6,6 +6,8 @@ Fish shell configuration and plugins.
 
 ## Install
 
+First, install the [dependencies](#dependencies)
+
 From repository root (e.g.: `~/.dot`)
 
 ```bash
@@ -23,6 +25,7 @@ Follows a list of worthwhile features that caught my eye:
 - configuration is minimal, since out-of-the-box defaults are already good
 - command suggestion is directory sensitive
 - universal (persistent) variables
+- shell syntax colors
 
 ## Plugins
 
