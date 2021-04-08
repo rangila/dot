@@ -1,7 +1,7 @@
 <!-- vim: set colorcolumn=80: -->
 
 # Description
- 
+
 Collection of tools to be installed from source via specific package
 instructions.
 
@@ -9,7 +9,7 @@ instructions.
 
 ## Install
 
-First, install the [dependencies](#dependencies)
+First, install the [dependencies](#dependencies).
 
 ```bash
 ./fzf/install

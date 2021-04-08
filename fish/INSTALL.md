@@ -6,7 +6,7 @@ Fish shell configuration and plugins.
 
 ## Install
 
-First, install the [dependencies](#dependencies)
+First, install the [dependencies](#dependencies).
 
 From repository root (e.g.: `~/.dot`)
 
