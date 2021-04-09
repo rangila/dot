@@ -16,12 +16,13 @@ cargo install fd-find
 cargo install tokei
 cargo install bat
 cargo install ripgrep
+cargo install zoxide
 ```
 
 One liner:
 
 ```
-cargo install git-delta fd-find tokei bat ripgrep
+cargo install git-delta fd-find tokei bat ripgrep zoxide
 ```
 
 ## Dependencies

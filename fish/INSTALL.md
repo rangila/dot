@@ -26,6 +26,8 @@ Follows a list of worthwhile features that caught my eye:
 - command suggestion is directory sensitive
 - universal (persistent) variables
 - shell syntax colors
+- guess-complete by default: to me means I have to press just 
+    <kbd>Ctrl</kbd>+<kbd>e</kbd> most of the times
 
 ## Plugins
 
@@ -35,18 +37,22 @@ Plugin list with basic usage.
 
 Fuzzy matching:
 
-- **file:** <span><kbd>Ctrl</kbd>+<kbd>F</kbd></span>
+- **file:** <kbd>Ctrl</kbd>+<kbd>F</kbd>
 - **git status:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd>
 - **git commit hash:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd>
 - **history:** <kbd>Ctrl</kbd>+<kbd>R</kbd>
 - **shell variable:** <kbd>Ctrl</kbd>+<kbd>V</kbd>
 
-### z
+### zoxide
 
 Smart directory jumping:
 
-- **jump:** <kbd>z</kbd>+`keyword`
-- **jump with alternatives:** <kbd>z</kbd>+`keyword`+<kbd>Tab</kbd>
+- **jump:** <kbd>g</kbd>+`keyword`
+- **jump with fzf:** <kbd>gi</kbd>+`keyword`
+
+Not really a fish plugin, but comes with [rust-tools](rust-tools/INSTALL.md).
+I did reconfigure it to use `g` and `gi` bindings, which seem more
+comfortable to me.
 
 ### bass
 
