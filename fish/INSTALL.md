@@ -26,7 +26,7 @@ Follows a list of worthwhile features that caught my eye:
 - command suggestion is directory sensitive
 - universal (persistent) variables
 - shell syntax colors
-- guess-complete by default: to me means I have to press just 
+- guess-complete by default: to me means I have to press just
     <kbd>Ctrl</kbd>+<kbd>e</kbd> most of the times
 
 ## Plugins
