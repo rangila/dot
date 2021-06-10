@@ -11,7 +11,7 @@ First, install the [dependencies](#dependencies).
 From repository root (e.g.: `~/.dot`)
 
 ```bash
-mkdir -p $HOME/.config/nvim && stow --dotfiles dot -t $HOME/.config/nvim -d vim-naive/
+mkdir -p $HOME/.config/nvim && stow --dotfiles dot -t $HOME/.config/nvim -d nvim/
 ```
 
 ## Plugins
@@ -19,6 +19,10 @@ mkdir -p $HOME/.config/nvim && stow --dotfiles dot -t $HOME/.config/nvim -d vim-
 Plugin list with basic usage.
 
 ## Dependencies
+    
+### Dotfiles
+
+- [ctags](ctags/INSTALL.md)
 
 ### Common
 
