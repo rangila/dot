@@ -18,6 +18,7 @@ set path+=**
 set wildmode=longest:full
 set wildmenu
 set ruler
+set modeline
 syntax on
 syntax enable
 
