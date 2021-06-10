@@ -19,7 +19,7 @@ mkdir -p $HOME/.config/nvim && stow --dotfiles dot -t $HOME/.config/nvim -d nvim
 Plugin list with basic usage.
 
 ## Dependencies
-    
+
 ### Dotfiles
 
 - [ctags](ctags/INSTALL.md)
