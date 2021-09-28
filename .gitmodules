@@ -4,3 +4,9 @@
 [submodule "terminal/nord-xresources"]
 	path = terminal/nord-xresources
 	url = https://github.com/arcticicestudio/nord-xresources.git
+[submodule "terminal/--force"]
+	path = terminal/--force
+	url = https://github.com/simmel/urxvt-resize-font.git
+[submodule "terminal/urxvt-resize-font"]
+	path = terminal/urxvt-resize-font
+	url = https://github.com/simmel/urxvt-resize-font.git
