@@ -1,3 +1,6 @@
 [submodule "source-github/fzf"]
 	path = github-tools/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "terminal/nord-xresources"]
+	path = terminal/nord-xresources
+	url = https://github.com/arcticicestudio/nord-xresources.git

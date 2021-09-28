@@ -1,0 +1,26 @@
+Emacs*toolBar: 0
+Emacs*scrollBar: 0
+Emacs*menuBar: 0
+
+URxvt*transparent: false
+
+URxvt*shading: 10
+
+URxvt*saveLines: 12000
+
+URxvt*font: xft:Hack:pixelsize=16
+URxvt*boldFont: xft:Hack:bold:pixelsize=16
+
+URxvt*scrollBar: false
+
+URxvt*scrollBar_right: false
+
+URxvt*scrollstyle: rxvt
+URxvt*iso14755: False
+URxvt.perl-ext-common: selection-to-clipboard,resize-font
+
+Xcursor.size: 12
+Xft.dpi: 110
+
+#include ".dot/terminal/nord-xresources/src/nord"
+
