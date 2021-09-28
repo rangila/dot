@@ -15,7 +15,7 @@ mkdir -p $HOME/.config/fish && stow --dotfiles dot -t $HOME/.config/fish -d fish
 fish
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 git checkout -- fish/dot/fish_plugins && fisher update
-fish_add_path .cargo/bin
+fish_add_path ~/.cargo/bin
 ```
 
 ## Appreciation list
@@ -37,7 +37,7 @@ Plugin list with basic usage.
 
 Fuzzy matching:
 
-- **file:** <kbd>Ctrl</kbd>+<kbd>F</kbd>
+- **file:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd>
 - **git status:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd>
 - **git commit hash:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd>
 - **history:** <kbd>Ctrl</kbd>+<kbd>R</kbd>
@@ -80,6 +80,10 @@ Plugin manager for fish.
 ### Uncommon
 
 - fish >= 3.2 (repo)
+
+```bash
+sudo add-apt-repository ppa:fish-shell/release-3
+```
 
 ### Dotfiles
 
