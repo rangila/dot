@@ -42,6 +42,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'lervag/vimtex'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
@@ -125,6 +126,11 @@ let g:gutentags_ctags_exclude = [
 			\'*.html', '*.svg', '*.m', '*.proto',
 			\'*.xml', '*.inl', '*.ini', '*.txt',
 			\]
+
+"" Vimtex
+"" =============================================================================
+nnoremap <silent> <leader>tc :VimtexCompile<CR>
+nnoremap <silent> <leader>tv :VimtexView<CR>
 
 "" FzF
 "" =============================================================================
