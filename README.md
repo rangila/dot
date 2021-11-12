@@ -1,23 +1,24 @@
 <!-- vim: set colorcolumn=80: -->
 
-# Dotfiles and configurations
+# Dot
 
-With this repo I want to track the configurations for the tools I find
-essential to have on every system.
+My dotfiles for:
 
-Eventually the aim is to solve some intrinsic issues as well:
+- terminal emulator life
+- developing rather big projects: mostly C++, works almost as well with stuff
+  like Scala or Python if you can live with some limitations.
 
-- **Replication**: how to effortlessly replicate the configurations on
-                   a new system?
-- **Consistency**: how to make sure changes are consistent and repeatable?
-- **Dependency management**: how to avoid implicit dependencies?
+## Key features
 
-## Tools
+Here are my debatable choices:
 
-**[vim](vim-bare/INSTALL.md)**: must have editor
-**[rust-tools](rust-tools/INSTALL.md)**: rust community has rewritten a set
-    of linux standard tools... with a modern twist
-**[fish](fish/INSTALL.md)**: a modern shell with nice defaults
-**[github-tools](github-tools/INSTALL.md)**: some tools are better to be
-    installed from github repository (or it's the only way)
+- use terminal everywhere
+- use fish, forget about POSIX-compatible unless you have to do serious
+  scripting
+- use fuzzy matching everywhere
+- use vim with a minimal configuration, drown nvim with plugins
+- use a consistent color-scheme
+- use ctags for code completion navigation
+- do not automatize the installation process - I'm simply not ready to
+  maintain it
 
