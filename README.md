@@ -19,6 +19,6 @@ Here are my debatable choices:
 - use vim with a minimal configuration, drown nvim with plugins
 - use a consistent color-scheme
 - use ctags for code completion navigation
-- do not automatize the installation process - I'm simply not ready to 
+- do not automatize the installation process - I'm simply not ready to
   maintain it
 
