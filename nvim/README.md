@@ -22,7 +22,7 @@ Plugin list with basic usage.
 
 ### Dotfiles
 
-- [ctags](ctags/INSTALL.md)
+- [ctags](ctags/README.md)
 
 ### Common
 

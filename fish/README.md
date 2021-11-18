@@ -50,7 +50,7 @@ Smart directory jumping:
 - **jump:** <kbd>g</kbd>+`keyword`
 - **jump with fzf:** <kbd>gi</kbd>+`keyword`
 
-Not really a fish plugin, but comes with [rust-tools](rust-tools/INSTALL.md).
+Not really a fish plugin, but comes with [rust-tools](rust-tools/README.md).
 I did reconfigure it to use `g` and `gi` bindings, which seem more
 comfortable to me.
 
@@ -87,6 +87,6 @@ sudo add-apt-repository ppa:fish-shell/release-3
 
 ### Dotfiles
 
-- [rust-tools](rust-tools/INSTALL.md)
-- [github-tools](github-tools/INSTALL.md)
+- [rust-tools](rust-tools/README.md)
+- [github-tools](github-tools/README.md)
 
