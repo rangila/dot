@@ -40,11 +40,13 @@ Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 call plug#end()
 
 colorscheme nord
@@ -52,6 +54,7 @@ colorscheme nord
 nnoremap Q <Nop>
 nnoremap <F1> :NERDTreeFind<CR>
 nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeRefreshRoot<CR>
 nnoremap <F5> :checktime<CR>
 nnoremap <F6> :Goyo<CR>
 nnoremap <F8> :set ignorecase! ignorecase?<CR>
@@ -175,4 +178,16 @@ function! s:ff_sink(item)
   let text = substitute(a:item, '\v^\>?\s*\d+\:?\s*', '', '')
   let @@ = empty(text) ? a:item : text
 endfunction
+
+"" Emmet
+"" =============================================================================
+
+let g:user_emmet_leader_key='<C-S>'
+let g:user_emmet_mode='a'
+
+"" nvim-gdb
+"" =============================================================================
+
+let g:nvimgdb_use_find_executables = 0
+let g:nvimgdb_use_cmake_to_find_executables = 0
 
