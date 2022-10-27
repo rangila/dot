@@ -1,12 +1,15 @@
 [submodule "source-github/fzf"]
 	path = github-tools/fzf
 	url = https://github.com/junegunn/fzf.git
-[submodule "terminal/nord-xresources"]
-	path = terminal/nord-xresources
-	url = https://github.com/arcticicestudio/nord-xresources.git
 [submodule "terminal/--force"]
 	path = terminal/--force
 	url = https://github.com/simmel/urxvt-resize-font.git
 [submodule "terminal/urxvt-resize-font"]
 	path = terminal/urxvt-resize-font
 	url = https://github.com/simmel/urxvt-resize-font.git
+[submodule "zsh/powerlevel10k"]
+	path = zsh/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git
+[submodule "terminal/xresources"]
+	path = terminal/xresources
+	url = git@github.com:dracula/xresources.git

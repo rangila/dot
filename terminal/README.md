@@ -14,6 +14,12 @@ From repository root (e.g.: `~/.dot`)
 stow --dotfiles dot -t $HOME -d terminal
 ```
 
+Configure pinentry
+
+```bash
+sudo update-alternatives --config pinentry
+```
+
 ## Dependencies
 
 ### Common
