@@ -27,4 +27,6 @@ Plugin list with basic usage.
 ### Common
 
 - neovim
+- sqlite
+- libsqlite3-dev
 
