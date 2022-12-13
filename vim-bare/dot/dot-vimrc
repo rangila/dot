@@ -26,3 +26,6 @@ syntax enable
 "set cursorline
 "set iskeyword-=_
 
+set colorcolumn=120
+let @r = "gg/ADRD-[0-9]\\+\nwwywgg^f-ldw\"0P$"
+

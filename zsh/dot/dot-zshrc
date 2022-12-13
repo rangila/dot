@@ -16,7 +16,8 @@ powerlevel_source="$HOME/.dot/zsh/powerlevel10k/powerlevel10k.zsh-theme"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin"
-[ -z "$GPG_TTY" ] && export GPG_TTY=$(tty)
+export GPG_TTY=$TTY
+export ZK_NOTEBOOK_DIR="/home/rangila/zettelkasten/"
 
 export HISTFILE=~/.zsh_history
 export HISTFILESIZE=1000000000
@@ -31,6 +32,35 @@ alias gg="__zoxide_zi"
 
 alias ll="ls -l"
 alias la="ls -al"
+
+alias aoeu="setxkbmap us"
+alias asdf="setxkbmap us dvorak"
+
+project_exclude_regex='.*\(build\|devel\|logs\|install\|html\|out\)' 
+
+cpp_files () {
+    folder="${1:-.}"
+    find "$folder" -type d -regex "$project_exclude_regex" -prune -o -type f -regex '.*\.\(hpp\|cpp\|h\)' -print    
+}
+
+cmake_files () {
+    folder="${1:-.}"
+    find "$folder" -type d -regex "$project_exclude_regex" -prune -o -type f -regex '.*\(/CMakeLists\.txt\|\.cmake\)' -print    
+}
+
+cpp_format () {
+    folder="${1:-.}"
+    cpp_files | xargs clang-format-16 -i
+}
+
+cmake_format () {
+    folder="${1:-.}"
+    cmake_files | xargs cmake-format -i
+}
+
+
+alias format="cpp_format"
+alias cmakeformat="cmake_format"
 
 autoload -U up-line-or-search
 autoload -U down-line-or-search
