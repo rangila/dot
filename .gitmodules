@@ -10,6 +10,6 @@
 [submodule "zsh/powerlevel10k"]
 	path = zsh/powerlevel10k
 	url = git@github.com:romkatv/powerlevel10k.git
-[submodule "terminal/xresources"]
-	path = terminal/xresources
-	url = git@github.com:dracula/xresources.git
+[submodule "terminal/everforest-xresources"]
+	path = terminal/everforest-xresources
+	url = git@github.com:jef/everforest-xresources.git

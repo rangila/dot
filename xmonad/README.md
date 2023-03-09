@@ -25,4 +25,3 @@ stow --dotfiles dot -t $HOME -d xmonad
 - trayer
 - stow
 - fonts-hack
-

@@ -21,4 +21,3 @@ Here are my debatable choices:
 - use ctags for code completion navigation
 - do not automatize the installation process - I'm simply not ready to
   maintain it
-
