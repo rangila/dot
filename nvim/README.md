@@ -29,4 +29,3 @@ Plugin list with basic usage.
 - neovim
 - sqlite
 - libsqlite3-dev
-

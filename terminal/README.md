@@ -26,4 +26,3 @@ sudo update-alternatives --config pinentry
 
 - rxvt-unicode
 - fonts-hack
-

@@ -89,4 +89,3 @@ sudo add-apt-repository ppa:fish-shell/release-3
 
 - [rust-tools](../rust-tools/README.md)
 - [github-tools](../github-tools/README.md)
-
