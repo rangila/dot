@@ -39,7 +39,7 @@ Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/goyo.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'arcticicestudio/nord-vim'
+Plug 'sainnhe/everforest'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
@@ -53,6 +53,8 @@ Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'tpope/vim-obsession'
 Plug 'rbong/vim-flog'
 Plug 'rhysd/git-messenger.vim'
+Plug 'lervag/wiki.vim'
+Plug 'michal-h21/vim-zettel'
 if has("nvim-0.5.0")
 	" Statistics about your keystrokes
 	Plug 'ThePrimeagen/vim-apm'
@@ -69,20 +71,32 @@ if has("nvim-0.5.0")
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'danymat/neogen'
-	" frecency
-    Plug 'kkharji/sqlite.lua'
-    Plug 'nvim-telescope/telescope-frecency.nvim'
 end
 if has("nvim-0.6.0")
 	" telekasten
 	Plug 'renerocksai/telekasten.nvim'
 	Plug 'renerocksai/calendar-vim'
-	" scMRU
-	Plug 'ilAYAli/scMRU.nvim'
 end
 call plug#end()
+        
+"" colorscheme
+"" =============================================================================
+if has('termguicolors')
+"	set termguicolors
+endif
 
-colorscheme nord
+set background=dark
+"set background=light
+
+" Set contrast.
+" This configuration option should be placed before `colorscheme everforest`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:everforest_background = 'hard'
+
+" For better performance
+let g:everforest_better_performance = 1
+
+colorscheme everforest
 
 nnoremap Q <Nop>
 nnoremap <F1> :NERDTreeFind<CR>
@@ -90,12 +104,19 @@ nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :NERDTreeRefreshRoot<CR>
 nnoremap <F5> :checktime<CR>
 nnoremap <F6> :Goyo<CR>
-nnoremap <F8> :set ignorecase! ignorecase?<CR>
+nnoremap <F7> :set ignorecase! ignorecase?<CR>
+nnoremap <F8> :set background=dark<CR>
+nnoremap <F9> :set background=light<CR>
 tnoremap <Esc> <C-\><C-n>
 
 let mapleader = "\<SPACE>"
 
 nnoremap <silent> g* :let @/=expand('<cword>') <bar> set hls <cr>
+
+"" wiki.vim
+"" =============================================================================
+let g:wiki_root = '~/wiki'
+
 
 "" Git
 "" =============================================================================
@@ -227,7 +248,7 @@ command! -bang -nargs=? FZFMru call fzf_mru#actions#mru(<q-args>,
     \}
 \)
 
-"nnoremap <silent> <leader>hh :FZFMru<CR>
+nnoremap <silent> <leader>hh :FZFMru<CR>
 
 let g:fzf_mru_relative = 1
 let g:fzf_mru_no_sort = 1
@@ -353,10 +374,10 @@ require'nvim-treesitter.configs'.setup {
 	},
   },
   indent = {
-    enable = true,
+    enable = false,
   },
   incremental_selection = {
-    enable = true,
+    enable = false,
     keymaps = {
       init_selection = '<CR>',
       scope_incremental = '<CR>',
@@ -368,36 +389,18 @@ require'nvim-treesitter.configs'.setup {
 require('neogen').setup {
 	enabled = true,
 }
-local hlmap = vim.treesitter.highlighter.hl_map
-hlmap.error = nil
+
+--require "nvim-treesitter".setup()
+--require "nvim-treesitter.highlight"
+--local hlmap = vim.treesitter.highlighter.hl_map
+--
+----Misc
+--hlmap.error = nil
+
+-- local hlmap = vim.treesitter.highlighter.hl_map
+-- hlmap.error = nil
 
 EOF
-end
-
-"" frecency
-"" =============================================================================
-if has("nvim-0.5.0")
-lua << END
-require('telescope').setup {
-	extensions = {
-		frecency = {
-			show_scores = false,
-			ignore_patterns = {
-				"*.git/*", 
-				"*.vscode/*", 
-				"*/build/*", 
-				"*/devel/*", 
-				"*/install/*", 
-				"*/html/*", 
-				"*/logs/*",
-				"*/tmp/*"
-            },
-            default_workspace = 'CWD'
-		}
-	},
-}
-require('telescope').load_extension("frecency")
-END
 end
 
 "" telekasten
@@ -585,10 +588,4 @@ nnoremap <leader>g :lua require('telekasten').panel()<CR>
 "inoremap <leader>zt <cmd>:lua require('telekasten').toggle_todo({ i=true })<CR>
 "inoremap <leader># <cmd>lua require('telekasten').show_tags({i = true})<cr>
 
-"" scMRU
-"" =============================================================================
-
-nnoremap <silent> <leader>hh :Telescope frecency<CR>
-"nnoremap <silent> <leader>hf :Mfu<CR>
-"nnoremap <silent> <leader>hr :MruRepos<CR>
-
+set mouse=
