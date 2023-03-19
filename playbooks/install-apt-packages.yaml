@@ -1,0 +1,24 @@
+---
+
+- name: Help
+  hosts: localhost
+  tasks:
+   - name: Privilege escalation
+     ansible.builtin.debug:
+       msg: Run this playbook with '--bkK' option
+
+- name: Generic dependencies
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: update
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Basic packages
+      ansible.builtin.apt:
+        pkg:
+          - stow
+          - git
+          - vim
+

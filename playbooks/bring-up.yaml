@@ -1,0 +1,20 @@
+---
+
+- name: Help
+  hosts: localhost
+  tasks:
+   - name: Privilege escalation
+     ansible.builtin.debug:
+       msg: Run this playbook with '--bkK' option
+
+- name: Setup
+  hosts: localhost
+  become: yes
+  connection: local
+  tasks:
+   - name: Ansible localhost
+     ansible.builtin.lineinfile:
+       path: /etc/ansible/hosts
+       line: 'localhost ansible_connection=local'
+       regex: '^localhost.*$'
+       state: present

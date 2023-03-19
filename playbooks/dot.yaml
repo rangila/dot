@@ -1,0 +1,46 @@
+---
+
+- name: Dot initialization
+  hosts: localhost
+  become: yes
+  vars:
+    - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    - dot: "{{ home }}/.dot"
+  tasks:
+    - name: Update submodules
+      shell:
+        "git submodule update --init --recursive"
+      args:
+        chdir: "{{ dot }}"
+      register: dotupdate
+
+    - name: Debug submodule update
+      debug: msg='{{dotupdate.stdout_lines}}'
+
+    - name: bare vim dependencies
+      ansible.builtin.apt:
+        pkg:
+          - stow
+          - vim
+
+    - name: Deploy bare vim
+      shell:
+        "stow --dotfiles dot -t {{ home }} -d vim-bare"
+      args:
+        chdir: "{{ dot }}"
+
+    - name: rust-tools dependencies
+      ansible.builtin.apt:
+        pkg:
+          - curl
+
+    - name: Install rust-tools
+      shell:
+        "curl https://sh.rustup.rs -sSf | sh"
+      args:
+        chdir: "{{ dot }}"
+      register: rustinstall
+
+    - name: Debug rust-tools
+      debug: msg='{{rustinstall}}'
+
