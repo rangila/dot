@@ -2,22 +2,25 @@
 
 # Dot
 
-My dotfiles for:
+## Installation
 
-- terminal emulator life
-- developing rather big projects: mostly C++, works almost as well with stuff
-  like Scala or Python if you can live with some limitations.
+### Always useful
 
-## Key features
+Aways needed no-config, no-brainer utilities
 
-Here are my debatable choices:
+```bash
+sudo apt install vim tmux git openssh-server
+```
 
-- use terminal everywhere
-- use fish, forget about POSIX-compatible unless you have to do serious
-  scripting
-- use fuzzy matching everywhere
-- use vim with a minimal configuration, drown nvim with plugins
-- use a consistent color-scheme
-- use ctags for code completion navigation
-- do not automatize the installation process - I'm simply not ready to
-  maintain it
+### Ansible
+
+```bash
+sudo apt-add-repository ppa:ansible/ansible && sudo apt install ansible
+```
+
+### Generate and upload ssh keys
+
+```bash
+ssh-keygen -t ed25519 -C "alekyrylenko@gmail.com"
+cat ~/.ssh/id_ed25519.pub
+```
