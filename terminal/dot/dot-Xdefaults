@@ -4,8 +4,8 @@ URxvt*shading: 10
 
 URxvt*saveLines: 12000
 
-URxvt*font: xft:DroidSansMono Nerd Font:pixelsize=16
-URxvt*boldFont: xft:DroidSansMono Nerd Font:bold:pixelsize=16
+URxvt*font: xft:Hack:pixelsize=16
+URxvt*boldFont: xft:Hack:bold:pixelsize=16
 
 URxvt*scrollBar: false
 

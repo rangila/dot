@@ -1,0 +1,24 @@
+---
+
+- name: Rust tools
+  hosts: localhost
+  vars:
+    - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    - dot: "{{ home }}/.dot"
+  tasks:
+    - name: dependencies
+      ansible.builtin.apt:
+        pkg:
+          - stow
+          - curl
+
+    - name: deploy
+      shell:
+        "curl https://sh.rustup.rs -sSf | sh -s -- -y"
+      args:
+        chdir: "{{ dot }}"
+      register: deploy_log
+
+    - name: debug
+      debug: msg='{{deploy_log}}'
+

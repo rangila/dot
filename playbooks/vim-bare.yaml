@@ -1,0 +1,32 @@
+---
+
+- name: install vim
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: dependencies
+      ansible.builtin.apt:
+        pkg:
+          - stow
+          - vim
+      register: install_log
+
+    - name: debug
+      debug: msg='{{install_log}}'
+
+- name: configure vim
+  hosts: localhost
+  become: no
+  vars:
+    - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    - dot: "{{ home }}/.dot"
+  tasks:
+    - name: deploy
+      shell:
+        "stow --dotfiles dot -t {{ home }} -d vim-bare"
+      args:
+        chdir: "{{ dot }}"
+      register: deploy_log
+
+    - name: debug
+      debug: msg='{{deploy_log}}'

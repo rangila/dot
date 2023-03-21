@@ -1,0 +1,43 @@
+---
+
+- name: install rxvt unicode
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: dependencies
+      ansible.builtin.apt:
+        pkg:
+          - stow
+          - rxvt-unicode
+          - fonts-hack
+          - pinentry-curses
+
+      register: install_log
+
+    - name: debug
+      debug: msg='{{install_log}}'
+
+    - name: pinentry
+      shell: 
+        "update-alternatives --set pinentry /usr/bin/pinentry-curses"
+      register: pinentry_log
+
+    - name: debug pinentry
+      debug: msg='{{pinentry_log}}'
+
+- name: configure rxvt unicode
+  hosts: localhost
+  become: no
+  vars:
+    - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    - dot: "{{ home }}/.dot"
+  tasks:
+    - name: deploy
+      shell:
+        "stow --dotfiles dot -t {{ home }} -d terminal"
+      args:
+        chdir: "{{ dot }}"
+      register: deploy_log
+
+    - name: debug
+      debug: msg='{{deploy_log}}'

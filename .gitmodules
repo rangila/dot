@@ -9,7 +9,7 @@
 	url = https://github.com/simmel/urxvt-resize-font.git
 [submodule "zsh/powerlevel10k"]
 	path = zsh/powerlevel10k
-	url = git@github.com:romkatv/powerlevel10k.git
+	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "terminal/everforest-xresources"]
 	path = terminal/everforest-xresources
-	url = git@github.com:jef/everforest-xresources.git
+	url = https://github.com/jef/everforest-xresources.git
