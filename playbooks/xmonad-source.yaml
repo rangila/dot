@@ -4,17 +4,24 @@
 - name: install xmonad build dependencies
   hosts: localhost
   become: yes
+  tags:
+    - deps
   tasks:
-    - name: dependencies
+    - name: build dependencies
       ansible.builtin.apt:
         pkg:
-          - stow
           - libx11-dev
           - libxft-dev
           - libxinerama-dev
           - libxrandr-dev
           - libxss-dev
           - haskell-stack
+
+    - name: package dependencies
+      ansible.builtin.apt:
+        pkg:
+          - stow
+          - rofi
 
     - name: update stack
       shell:
@@ -23,6 +30,8 @@
 - name: copy configuration files
   hosts: localhost
   become: no
+  tags:
+    - dot
   vars:
     - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
     - dot: "{{ home }}/.dot"
