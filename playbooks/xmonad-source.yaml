@@ -1,6 +1,6 @@
 ---
 
-- name: install vim
+- name: install xmonad build dependencies
   hosts: localhost
   become: yes
   tasks:
@@ -8,21 +8,17 @@
       ansible.builtin.apt:
         pkg:
           - stow
-          - vim
-      register: install_log
+          - libx11-dev
+          - libxft-dev
+          - libxinerama-dev
+          - libxrandr-dev
+          - libxss-dev
+      register: build_dep_log
 
     - name: debug
-      debug: msg='{{install_log}}'
+      debug: msg='{{build_dep_log}}'
 
-    - name: set vim as default system editor
-      shell: 
-        "update-alternatives --set editor /usr/bin/vim.basic"
-      register: vim_system_log
-
-    - name: debug vim as system editor
-      debug: msg='{{vim_system_log}}'
-
-- name: configure vim
+- name: copy configuration files
   hosts: localhost
   become: no
   vars:
@@ -31,7 +27,7 @@
   tasks:
     - name: deploy
       shell:
-        "stow --dotfiles dot -t {{ home }} -d vim-bare"
+        "mkdir -p {{ home }}/.config/xmonad && stow --dotfiles dot -t {{ home }}/.config/xmonad -d xmonad"
       args:
         chdir: "{{ dot }}"
       register: deploy_log
