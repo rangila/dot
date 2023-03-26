@@ -1,3 +1,4 @@
+# vim: set shiftwidth=2 tabstop=2 softtabstop=-1 expandtab:
 ---
 
 - name: install xmonad build dependencies
@@ -13,10 +14,11 @@
           - libxinerama-dev
           - libxrandr-dev
           - libxss-dev
-      register: build_dep_log
+          - haskell-stack
 
-    - name: debug
-      debug: msg='{{build_dep_log}}'
+    - name: update stack
+      shell:
+        "stack upgrade --force-download"
 
 - name: copy configuration files
   hosts: localhost
@@ -27,10 +29,28 @@
   tasks:
     - name: deploy
       shell:
-        "mkdir -p {{ home }}/.config/xmonad && stow --dotfiles dot -t {{ home }}/.config/xmonad -d xmonad"
+        "mkdir -p {{ home }}/.config/xmonad && stow -t {{ home }}/.config/xmonad xmonad"
       args:
         chdir: "{{ dot }}"
-      register: deploy_log
 
-    - name: debug
-      debug: msg='{{deploy_log}}'
+- name: compile xmonad
+  hosts: localhost
+  become: no
+  vars:
+    - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    - src: "{{ home }}/.config/xmonad"
+  tags:
+    - compile
+  tasks:
+    - name: compile
+      shell:
+        "stack init --force && stack install"
+      args:
+        chdir: "{{ src }}"
+
+    - name: add path to bashrc
+      ansible.builtin.lineinfile:
+        path: "{{ home }}/.bashrc"
+        line: 'export PATH="$PATH/.local/bin"'
+        state: present
+
