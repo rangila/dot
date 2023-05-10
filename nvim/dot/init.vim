@@ -29,6 +29,8 @@ set cursorline
 "set iskeyword-=_
 
 call plug#begin()
+Plug 'rhysd/conflict-marker.vim'
+Plug 'jbyuki/venn.nvim'
 Plug 'bronson/vim-visual-star-search'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
@@ -56,6 +58,7 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'lervag/wiki.vim'
 Plug 'michal-h21/vim-zettel'
 if has("nvim-0.5.0")
+    Plug 'anuvyklack/hydra.nvim'
 	" Statistics about your keystrokes
 	Plug 'ThePrimeagen/vim-apm'
 	" language parser for better syntax highlighting, refactoring, navigation,
@@ -284,6 +287,50 @@ endfunction
 
 "autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
 nnoremap <silent> <leader>aa :call FormatBuffer()<CR>
+
+"" Hydra
+"" =============================================================================
+
+if has("nvim-0.5.0")
+	"nvim-treesitter configuration
+lua <<EOF
+
+local Hydra = require('hydra')
+
+local hint = [[
+ Arrow^^^^^^   Select region with <C-v>
+ ^ ^ _K_ ^ ^   _f_: surround it with box
+ _H_ ^ ^ _L_
+ ^ ^ _J_ ^ ^                      _<Esc>_
+]]
+
+Hydra({
+   name = 'Draw Diagram',
+   hint = hint,
+   config = {
+      color = 'pink',
+      invoke_on_body = true,
+      hint = {
+         border = 'rounded'
+      },
+      on_enter = function()
+         vim.o.virtualedit = 'all'
+      end,
+   },
+   mode = 'n',
+   body = '<leader>d',
+   heads = {
+      { 'H', '<C-v>h:VBox<CR>' },
+      { 'J', '<C-v>j:VBox<CR>' },
+      { 'K', '<C-v>k:VBox<CR>' },
+      { 'L', '<C-v>l:VBox<CR>' },
+      { 'f', ':VBox<CR>', { mode = 'v' }},
+      { '<Esc>', nil, { exit = true } },
+   }
+})
+
+EOF
+end
 
 "" Treesitter
 "" =============================================================================
