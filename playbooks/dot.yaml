@@ -20,5 +20,5 @@
 - import_playbook: install-apt-packages.yaml
 - import_playbook: vim-bare.yaml
 - import_playbook: terminal.yaml
-  #- import_playbook: rust-tools.yaml
+- import_playbook: rust-tools.yaml
 

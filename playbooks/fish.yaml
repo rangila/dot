@@ -1,0 +1,56 @@
+# vim: set shiftwidth=2 tabstop=2 softtabstop=-1 expandtab:
+---
+
+- name: install fish
+  hosts: localhost 
+  vars:
+    - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+  tags:
+    - deps
+  become: yes
+  tasks:
+    - name: rust build dependencies
+      shell:
+        "sudo add-apt-repository -y ppa:fish-shell/release-3"
+
+    - name: package dependencies
+      ansible.builtin.apt:
+        pkg:
+          - stow
+          - curl
+          - fish
+
+- name: install rust tools
+  hosts: localhost
+  vars:
+    - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    - dot: "{{ home }}/.dot"
+  tags:
+    - dot
+  become: no
+  tasks:
+    - name: initialize fish configuration
+      args:
+        chdir: "{{ dot }}"
+        executable: "/usr/bin/fish"
+      shell:
+        "mkdir -p {{ home }}/.config/fish && stow --dotfiles dot -t {{ home }}/.config/fish -d fish/"
+
+    - name: install plugin manager
+      args:
+        executable: "/usr/bin/fish"
+      shell:
+        "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+
+    - name: reinitialize repo and add plugins
+      args:
+        chdir: "{{ dot }}"
+        executable: "/usr/bin/fish"
+      shell:
+        "git restore fish/dot/fish_plugins && fisher update"
+
+    - name: add rust to path
+      args:
+        executable: "/usr/bin/fish"
+      shell:
+        "fish_add_path ~/.cargo/bin"

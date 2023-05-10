@@ -1,24 +1,40 @@
+# vim: set shiftwidth=2 tabstop=2 softtabstop=-1 expandtab:
 ---
 
-- name: Rust tools
-  hosts: localhost
+- name: install cargo
+  hosts: localhost 
   vars:
     - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
-    - dot: "{{ home }}/.dot"
+  tags:
+    - deps
+  become: no
   tasks:
-    - name: dependencies
+    - name: package dependencies
       ansible.builtin.apt:
         pkg:
           - stow
           - curl
+          - build-essential
 
-    - name: deploy
+    - name: rust build dependencies
       shell:
         "curl https://sh.rustup.rs -sSf | sh -s -- -y"
-      args:
-        chdir: "{{ dot }}"
-      register: deploy_log
 
-    - name: debug
-      debug: msg='{{deploy_log}}'
+    - name: update path
+      ansible.builtin.lineinfile:
+        path: "{{ home }}/.bashrc"
+        line: 'export PATH="$PATH:$HOME/.cargo/bin"'
+        state: present
+
+- name: install rust tools
+  hosts: localhost
+  vars:
+    - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+  tags:
+    - dot
+  become: no
+  tasks:
+    - name: rust build dependencies
+      shell:
+        "cargo install bat zoxide"
 
