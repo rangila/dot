@@ -1,6 +1,6 @@
-set -U fish_greeting "For every complex problem there is an answer that is clear, simple, and wrong."
+set -U fish_greeting ""
 
-fzf_key_bindings
+#fzf_key_bindings
 
 zoxide init --cmd "g" fish | source
 
