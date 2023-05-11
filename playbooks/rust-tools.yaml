@@ -36,5 +36,5 @@
   tasks:
     - name: rust build dependencies
       shell:
-        "cargo install bat zoxide"
+        "cargo install bat zoxide ripgrep"
 
