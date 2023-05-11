@@ -274,14 +274,14 @@ let g:nvimgdb_use_cmake_to_find_executables = 0
 function FormatBufferConditional()
   if &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
     let cursor_pos = getpos('.')
-    :%!clang-format-16
+    :%!clang-format-15
     call setpos('.', cursor_pos)
   endif
 endfunction
 
 function FormatBuffer()
     let cursor_pos = getpos('.')
-    :%!clang-format-16
+    :%!clang-format-15
     call setpos('.', cursor_pos)
 endfunction
 
@@ -454,10 +454,10 @@ end
 "" =============================================================================
 if has("nvim-0.6.0")
 lua << END
-local home = vim.fn.expand("~/zettelkasten")
+local home = vim.fn.expand("~/wiki/")
 local home2 = vim.fn.expand("~/doc/obsidian/General/")
 require('telekasten').setup({
-    home         = home,
+    home         = vim.fn.expand("~/wiki"),
 
     -- if true, telekasten will be enabled when opening a note within the configured home
     take_over_my_home = true,
