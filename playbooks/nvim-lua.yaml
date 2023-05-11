@@ -1,0 +1,83 @@
+# vim: set shiftwidth=2 tabstop=2 softtabstop=-1 expandtab:
+---
+
+- name: install neovim with lua configuration
+  hosts: localhost
+  become: yes
+  tags:
+    - deps
+  tasks:
+    - name: build dependencies
+      ansible.builtin.apt:
+        pkg:
+          - libtool
+          - libtool-bin
+          - cmake
+          - build-essential
+
+    - name: package dependencies
+      ansible.builtin.apt:
+        pkg:
+          - stow
+
+- name: setup configuration
+  hosts: localhost
+  become: no
+  tags:
+    - dot
+  vars:
+    - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    - dot: "{{ home }}/.dot"
+  tasks:
+    - name: deploy config
+      shell:
+        "mkdir -p {{ home }}/.config/nvim && stow --dotfiles dot -t {{ home }}/.config/nvim -d nvim-lua"
+      args:
+        chdir: "{{ dot }}"
+
+    - name: install packer
+      shell:
+        cmd: |
+          git clone --depth 1 https://github.com/wbthomason/packer.nvim {{ home }}/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+
+
+- name: compile neovim
+  hosts: localhost
+  become: no
+  vars:
+    - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    - dot: "{{ home }}/.dot"
+    - src: "{{ dot }}/neovim"
+  tags:
+    - compile
+  tasks:
+    - name: set version
+      shell:
+        "git checkout v0.9.0"
+      args:
+        chdir: "{{ src }}"
+
+    - name: compile neovim
+      shell:
+        "make CMAKE_BUILD_TYPE=RelWithDebInfo"
+      args:
+        chdir: "{{ src }}"
+
+- name: install neovim
+  hosts: localhost
+  become: yes
+  vars:
+    - home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    - dot: "{{ home }}/.dot"
+    - src: "{{ dot }}/neovim"
+  tags:
+    - install
+  tasks:
+    - name: install neovim
+      shell:
+        "sudo make install"
+      args:
+        chdir: "{{ src }}"
+
+

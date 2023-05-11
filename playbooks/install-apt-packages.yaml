@@ -23,4 +23,5 @@
           - vim
           - tmux
           - openssh-server
+          - silversearcher-ag
 
